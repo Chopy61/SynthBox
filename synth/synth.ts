@@ -1236,6 +1236,8 @@ namespace beepbox {
 		//mstVibratoSpeed = 17,
 		mstSongDetune = 17,
 		mstMaxValue = 18,
+		mstFMSlider5 = 19,
+		mstFMSlider6 = 20,
 	}
 
 	export class Channel {
@@ -1291,6 +1293,8 @@ namespace beepbox {
 			[ModSetting.mstDetune, Config.detuneMax - Config.detuneMin],
 			[ModSetting.mstVibratoDepth, 50],
 			[ModSetting.mstSongDetune, Config.songDetuneMax - Config.songDetuneMin],
+			[ModSetting.mstFMSlider5, 15],
+			[ModSetting.mstFMSlider6, 15],
 			//[ModSetting.mstVibratoSpeed, 100],
 		]
 		);
@@ -1332,6 +1336,8 @@ namespace beepbox {
 				case ModSetting.mstVibratoDepth:
 				//case ModSetting.mstVibratoSpeed:
 				case ModSetting.mstNone:
+				case ModSetting.mstFMSlider5:
+				case ModSetting.mstFMSlider6:
 				default:
 					break;
 			}
@@ -1379,6 +1385,8 @@ namespace beepbox {
 				case ModSetting.mstVibratoDepth:
 				//case ModSetting.mstVibratoSpeed:
 				case ModSetting.mstNone:
+				case ModSetting.mstFMSlider5:
+				case ModSetting.mstFMSlider6:
 				default:
 					break;
 			}
@@ -3421,6 +3429,8 @@ namespace beepbox {
 				case ModSetting.mstFMSlider3:
 				case ModSetting.mstFMSlider4:
 				case ModSetting.mstFMFeedback:
+				case ModSetting.mstFMSlider5:
+				case ModSetting.mstFMSlider6:
 				case ModSetting.mstVibratoDepth:
 				//case ModSetting.mstVibratoSpeed:
 				case ModSetting.mstDetune:

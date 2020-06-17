@@ -1,13 +1,21 @@
 # JummBox
-
-JummBox is an online tool for sketching and sharing instrumental melodies.
-You can find it [here](jummbus.bitbucket.io).
-It is a modification of the [original BeepBox](https://beepbox.co), focused on improving ease-of-use.
+SynthBox is an online work in progress tool for sketching and sharing instrumental melodies.
+SynthBox is currently under development.
+It is a modification of [Jumbox](jummbus.bitbucket.io) which in turn is based on the [original BeepBox](https://beepbox.co), focused on having more power features.
 
 All song data is packaged into the URL at the top of your browser. When you make
 changes to the song, the URL is updated to reflect your changes. When you are
 satisfied with your song, just copy and paste the URL to save and share your
 song!
+
+Added Features:
+-6 Op FM
+
+Planned Features:
+-More powerful subtractive synthesis(Highpass Filter Option)
+-LFO Mod Channel
+-Triple Wave Instrument (Square, Sine, Triangle, Pulse, and Sawtooth)
+-Sampling
 
 JummBox is free, as is BeepBox. If you ever feel so inclined, definitely send something to the original creator, [John Nesky](http://www.johnnesky.com/)'s
 [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=QZJTX9GRYEV9N&currency_code=USD). He deserves it :)

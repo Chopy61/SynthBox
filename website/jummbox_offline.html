@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
@@ -26,7 +26,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/icon_32.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet" rel="stylesheet" media="none" onload="if (this.media != 'all') this.media='all';" /> <!-- this is a trick to load CSS asynchronously. -->
-    <style type="text/css">
+    <meta name="robots" content="noindex, nofollow" />
+	<style type="text/css">
 
         html {
             background: var(--page-margin, black);
@@ -123,13 +124,13 @@
                 justify-content: space-between;
             }
 
-            .instructions-column {
+            /*.instructions-column {
                 width: 375px;
             }
 
             .twitter-column {
                 width: 300px;
-            }
+            }*/
         }
 
         /* narrow screen */
@@ -161,12 +162,11 @@
         <section>
 
             <h1>
-                <font color="#9c64f7">BetaBox</font>
+                <font color="#9c64f7">JummBox Offline</font>
                 <div id="jummboxPlant" style="display: inline; color:#62a13b"></div>
             </h1>
             <p id="introduction">
-                This is under construction <br>
-                This is an online tool for sketching and sharing chiptune melodies.<br>
+                This is an online (and offline!) tool for sketching and sharing chiptune melodies.<br>
                 It is a modification of the <a href="https://www.beepbox.co/">original BeepBox</a> by John Nesky.
             </p>
             <p>
@@ -291,15 +291,6 @@
                     </p>
                 </section>
             </main>
-            <aside class="twitter-column">
-                <h2>
-                    Shared on Twitter:
-                </h2>
-                <div style="background: black;">
-                    <a class="twitter-timeline" data-width="300" data-height="2000" data-link-color="#9988ff" data-chrome="noheader nofooter transparent" data-dnt="true" data-theme="dark" href="https://twitter.com/beepboxco?ref_src=twsrc%5Etfw">Songs retweeted by @beepboxco</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-            </aside>
         </div>
     </div>
 
@@ -335,32 +326,6 @@
 			//document.getElementById("offline-instructions").innerHTML = 'You can use BeepBox when your device is offline if you put a shortcut to BeepBox on your home screen. <ul><li>Chrome: find the "Add to Home Screen" option in the ⋮ menu.</li><li>Firefox: find the "Add Page Shortcut" option in the ⋮ menu.</li><li>Safari: find the "Add to Home Screen" option in the bookmark menu.</li></ul>';
         }
 
-        function browserHasRequiredFeatures() {
-            "use strict";
-            if (window.AudioContext == undefined && window.webkitAudioContext == undefined) {
-                return false;
-            }
-
-            try {
-                eval("class T {}");
-                eval("const a = () => 0");
-                eval("for (const a of []);");
-            } catch (error) {
-                return false;
-            }
-
-            return true;
-        }
-
-        if (browserHasRequiredFeatures()) {
-            // Go ahead and load js beepbox editor interface:
-            var fileref = document.createElement("script");
-            fileref.setAttribute("type", "text/javascript");
-            fileref.setAttribute("src", "beepbox_editor.js");
-            document.head.appendChild(fileref);
-        } else {
-            document.getElementById("beepboxEditorContainer").innerHTML = "Sorry, JummBox doesn't support your browser. Try a recent version of Chrome, Firefox, Edge, Safari, or Opera.";
-        }
 
     </script>
 </body>

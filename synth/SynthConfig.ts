@@ -298,21 +298,23 @@ namespace beepbox {
 			{ name: "custom interval", harmonizes: true, customInterval: true, arpeggiates: true, isCustomInterval: true, strumParts: 0 },
 		]);
 		public static readonly maxChordSize: number = 4;
-		public static readonly operatorCount: number = 4;
+		public static readonly operatorCount: number = 6;
 		public static readonly algorithms: DictionaryArray<Algorithm> = toNameMap([
-			{ name: "1←(2 3 4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3, 4], [], [], []] },
-			{ name: "1←(2 3←4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3], [], [4], []] },
-			{ name: "1←2←(3 4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2], [3, 4], [], []] },
-			{ name: "1←(2 3)←4", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3], [4], [4], []] },
-			{ name: "1←2←3←4", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2], [3], [4], []] },
-			{ name: "1←3 2←4", carrierCount: 2, associatedCarrier: [1, 2, 1, 2], modulatedBy: [[3], [4], [], []] },
-			{ name: "1 2←(3 4)", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[], [3, 4], [], []] },
-			{ name: "1 2←3←4", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[], [3], [4], []] },
-			{ name: "(1 2)←3←4", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[3], [3], [4], []] },
-			{ name: "(1 2)←(3 4)", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[3, 4], [3, 4], [], []] },
-			{ name: "1 2 3←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[], [], [4], []] },
-			{ name: "(1 2 3)←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[4], [4], [4], []] },
-			{ name: "1 2 3 4", carrierCount: 4, associatedCarrier: [1, 2, 3, 4], modulatedBy: [[], [], [], []] },
+			//{ name: "1←(2 3 4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3, 4], [], [], []] },
+			//{ name: "1←(2 3←4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3], [], [4], []] },
+			//{ name: "1←2←(3 4)", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2], [3, 4], [], []] },
+			//{ name: "1←(2 3)←4", carrierCount: 1, associatedCarrier: [1, 1, 1, 1], modulatedBy: [[2, 3], [4], [4], []] },
+			{ name: "1←2←3←4←5←6", carrierCount: 2, associatedCarrier: [1, 1, 1, 1, 1, 1], modulatedBy: [[2], [3], [4], [5], [6], []] },
+			//{ name: "1←4 2←5 3←6", carrierCount: 3, associatedCarrier: [1, 2, 3, 1, 2, 3], modulatedBy: [[4], [5], [6], [], [], []] },
+			//{ name: "1←3 2←4←5←6" carrierCount: 2, associatedCarrier: [1, }
+			//{ name: "1←3 2←4", carrierCount: 2, associatedCarrier: [1, 2, 1, 2], modulatedBy: [[3], [4], [], []] },
+			//{ name: "1 2←(3 4)", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[], [3, 4], [], []] },
+			//{ name: "1 2←3←4", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[], [3], [4], []] },
+			//{ name: "(1 2)←3←4", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[3], [3], [4], []] },
+			//{ name: "(1 2)←(3 4)", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[3, 4], [3, 4], [], []] },
+			//{ name: "1 2 3←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[], [], [4], []] },
+			//{ name: "(1 2 3)←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[4], [4], [4], []] },
+			{ name: "1 2 3 4 5 6", carrierCount: 6, associatedCarrier: [1, 2, 3, 4, 5, 6], modulatedBy: [[], [], [], [], [], []] },
 		]);
 		public static readonly operatorCarrierInterval: ReadonlyArray<number> = [0.0, 0.04, -0.073, 0.091];
 		public static readonly operatorAmplitudeMax: number = 15;
@@ -357,24 +359,24 @@ namespace beepbox {
 			{ name: "decay 3", type: EnvelopeType.decay, speed: 4.0 },
 		]);
 		public static readonly feedbacks: DictionaryArray<Feedback> = toNameMap([
-			{ name: "1⟲", indices: [[1], [], [], []] },
-			{ name: "2⟲", indices: [[], [2], [], []] },
-			{ name: "3⟲", indices: [[], [], [3], []] },
-			{ name: "4⟲", indices: [[], [], [], [4]] },
-			{ name: "1⟲ 2⟲", indices: [[1], [2], [], []] },
-			{ name: "3⟲ 4⟲", indices: [[], [], [3], [4]] },
-			{ name: "1⟲ 2⟲ 3⟲", indices: [[1], [2], [3], []] },
-			{ name: "2⟲ 3⟲ 4⟲", indices: [[], [2], [3], [4]] },
-			{ name: "1⟲ 2⟲ 3⟲ 4⟲", indices: [[1], [2], [3], [4]] },
-			{ name: "1→2", indices: [[], [1], [], []] },
-			{ name: "1→3", indices: [[], [], [1], []] },
-			{ name: "1→4", indices: [[], [], [], [1]] },
-			{ name: "2→3", indices: [[], [], [2], []] },
-			{ name: "2→4", indices: [[], [], [], [2]] },
-			{ name: "3→4", indices: [[], [], [], [3]] },
-			{ name: "1→3 2→4", indices: [[], [], [1], [2]] },
-			{ name: "1→4 2→3", indices: [[], [], [2], [1]] },
-			{ name: "1→2→3→4", indices: [[], [1], [2], [3]] },
+			//{ name: "1⟲", indices: [[1], [], [], []] },
+			//{ name: "2⟲", indices: [[], [2], [], []] },
+			//{ name: "3⟲", indices: [[], [], [3], []] },
+			//{ name: "4⟲", indices: [[], [], [], [4]] },
+			//{ name: "1⟲ 2⟲", indices: [[1], [2], [], []] },
+			//{ name: "3⟲ 4⟲", indices: [[], [], [3], [4]] },
+			//{ name: "1⟲ 2⟲ 3⟲", indices: [[1], [2], [3], []] },
+			//{ name: "2⟲ 3⟲ 4⟲", indices: [[], [2], [3], [4]] },
+			{ name: "1⟲ 2⟲ 3⟲ 4⟲ 5⟲ 6⟲", indices: [[1], [2], [3], [4], [5], [6]] },
+			//{ name: "1→2", indices: [[], [1], [], []] },
+			//{ name: "1→3", indices: [[], [], [1], []] },
+			//{ name: "1→4", indices: [[], [], [], [1]] },
+			//{ name: "2→3", indices: [[], [], [2], []] },
+			//{ name: "2→4", indices: [[], [], [], [2]] },
+			//{ name: "3→4", indices: [[], [], [], [3]] },
+			//{ name: "1→3 2→4", indices: [[], [], [1], [2]] },
+			//{ name: "1→4 2→3", indices: [[], [], [2], [1]] },
+			//{ name: "1→2→3→4", indices: [[], [1], [2], [3]] },
 		]);
 		public static readonly chipNoiseLength: number = 1 << 15; // 32768
 		public static readonly spectrumBasePitch: number = 24;
