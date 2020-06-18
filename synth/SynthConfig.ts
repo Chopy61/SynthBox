@@ -297,7 +297,7 @@ namespace beepbox {
 			{ name: "arpeggio", harmonizes: false, customInterval: false, arpeggiates: true, isCustomInterval: false, strumParts: 0 },
 			{ name: "custom interval", harmonizes: true, customInterval: true, arpeggiates: true, isCustomInterval: true, strumParts: 0 },
 		]);
-		public static readonly maxChordSize: number = 6;
+		public static readonly maxChordSize: number = 8;
 		public static readonly operatorCount: number = 6;
 		public static readonly algorithms: DictionaryArray<Algorithm> = toNameMap([
 			{ name: "1←2←3←4←5←6", carrierCount: 2, associatedCarrier: [1, 1, 1, 1, 1, 1], modulatedBy: [[2], [3], [4], [5], [6], []] },
@@ -328,12 +328,13 @@ namespace beepbox {
 			//{ name: "(1 2)←(3 4)", carrierCount: 2, associatedCarrier: [1, 2, 2, 2], modulatedBy: [[3, 4], [3, 4], [], []] },
 			//{ name: "1 2 3←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[], [], [4], []] },
 			//{ name: "(1 2 3)←4", carrierCount: 3, associatedCarrier: [1, 2, 3, 3], modulatedBy: [[4], [4], [4], []] },
-			//{ name: "1 2 3 4 5 6", carrierCount: 6, associatedCarrier: [1, 2, 3, 4, 5, 6], modulatedBy: [[], [], [], [], [], []] },
-			//{ name: "1 2 3 4 5←6", carrierCount: 5, associatedCarrier: [1, 2, 3, 4, 5, 5], modulatedBy: [[],[],[],[],[6],[]]}
+			{ name: "1 2 3 4 5 6", carrierCount: 6, associatedCarrier: [1, 2, 3, 4, 5, 6], modulatedBy: [[], [], [], [], [], []] },
+			{ name: "1 2 3 4 5←6", carrierCount: 5, associatedCarrier: [1, 2, 3, 4, 5, 5], modulatedBy: [[],[],[],[],[6],[]]}
 		]);
 		public static readonly operatorCarrierInterval: ReadonlyArray<number> = [0.0, 0.04, -0.073, 0.091];
 		public static readonly operatorAmplitudeMax: number = 15;
 		public static readonly operatorFrequencies: DictionaryArray<OperatorFrequency> = toNameMap([
+			{ name: "0.5", mult: 0.5, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "1×", mult: 1.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "~1×", mult: 1.0, hzOffset: 1.5, amplitudeSign: -1.0 },
 			{ name: "2×", mult: 2.0, hzOffset: 0.0, amplitudeSign: 1.0 },
@@ -345,6 +346,7 @@ namespace beepbox {
 			{ name: "7×", mult: 7.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "8×", mult: 8.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "9×", mult: 9.0, hzOffset: 0.0, amplitudeSign: 1.0 },
+			{ name: "10x", mult: 10.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "11×", mult: 11.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "13×", mult: 13.0, hzOffset: 0.0, amplitudeSign: 1.0 },
 			{ name: "14x", mult: 14.0, hzOffset: 0.0, amplitudeSign: 1.0 },
@@ -400,6 +402,7 @@ namespace beepbox {
 			//{ name: "3⟲ 4⟲", indices: [[], [], [3], [4]] },
 			//{ name: "1⟲ 2⟲ 3⟲", indices: [[1], [2], [3], []] },
 			//{ name: "2⟲ 3⟲ 4⟲", indices: [[], [2], [3], [4]] },
+			{ name: "5→6", indices: [[], [], [], [], [], [6]] },
 			{ name: "1⟲ 2⟲ 3⟲ 4⟲ 5⟲ 6⟲", indices: [[1], [2], [3], [4], [5], [6]] },
 			//{ name: "1→2", indices: [[], [1], [], []] },
 			//{ name: "1→3", indices: [[], [], [1], []] },
