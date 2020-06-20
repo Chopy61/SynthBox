@@ -2960,7 +2960,7 @@ namespace beepbox {
 
 	class Tone {
 		public instrument: Instrument;
-		public readonly pitches: number[] = [0, 0, 0, 0];
+		public readonly pitches: number[] = [0, 0, 0, 0, 0, 0];
 		public pitchCount: number = 0;
 		public chordSize: number = 0;
 		public drumsetPitch: number = 0;

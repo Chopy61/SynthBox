@@ -356,3 +356,5 @@
 
 SynthBox Tasks
 √ Added 2 Additional Operators to FM
+√ Added most of the DX7 Algorithms + new operator options to FM
+Changed the interface of FM to make it easier to work with

@@ -1015,6 +1015,10 @@ namespace beepbox {
 					return this._operatorAmplitudeSliders[2];
 				case ModSetting.mstFMSlider4:
 					return this._operatorAmplitudeSliders[3];
+				case ModSetting.mstFMSlider5:
+					return this._operatorAmplitudeSliders[4];
+				case ModSetting.mstFMSlider5:
+					return this._operatorAmplitudeSliders[5];
 				case ModSetting.mstFMFeedback:
 					return this._feedbackAmplitudeSlider;
 				case ModSetting.mstPulseWidth:
@@ -1623,6 +1627,8 @@ namespace beepbox {
 								settingList.push("fm slider 2");
 								settingList.push("fm slider 3");
 								settingList.push("fm slider 4");
+								settingList.push("fm slider 5");
+								settingList.push("fm slider 6");
 								settingList.push("fm feedback");
 							}
 						}
@@ -1734,6 +1740,18 @@ namespace beepbox {
 							case ModSetting.mstFMFeedback:
 								if ((modStatus == ModStatus.msForPitch || modStatus == ModStatus.msForNoise) && tgtInstrument.type == InstrumentType.fm)
 									setIndex = 11;
+								else
+									needReset = true;
+								break;
+							case ModSetting.mstFMSlider5:
+								if ((modStatus == ModStatus.msForPitch || modStatus == ModStatus.msForNoise) && tgtInstrument.type == InstrumentType.fm)
+									setIndex = 12;
+								else
+									needReset = true;
+								break;
+							case ModSetting.mstFMSlider6:
+								if ((modStatus == ModStatus.msForPitch || modStatus == ModStatus.msForNoise) && tgtInstrument.type == InstrumentType.fm)
+									setIndex = 13;
 								else
 									needReset = true;
 								break;

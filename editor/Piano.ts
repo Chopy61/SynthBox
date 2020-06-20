@@ -425,6 +425,12 @@ namespace beepbox {
 							case ModSetting.mstFMSlider4:
 								secondRow = "FM 4";
 								break;
+							case ModSetting.mstFMSlider5:
+								secondRow = "FM 5";
+								break;
+							case ModSetting.mstFMSlider6:
+								secondRow = "FM 6";
+								break;
 							case ModSetting.mstInsVolume:
 								secondRow = "Volume";
 								break;

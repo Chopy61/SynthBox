@@ -530,7 +530,7 @@ namespace beepbox {
 					{ item: InstrumentType.pwm, weight: 4 },
 					{ item: InstrumentType.harmonics, weight: 6 },
 					{ item: InstrumentType.spectrum, weight: 1 },
-					{ item: InstrumentType.fm, weight: 4 },
+					{ item: InstrumentType.fm, weight: 6 },
 				]);
 				instrument.preset = instrument.type = type;
 				instrument.filterCutoff = selectCurvedDistribution(2, Config.filterCutoffRange - 1, 7, 1.5);
@@ -1456,6 +1456,12 @@ namespace beepbox {
 				case "fm slider 4":
 					setting = ModSetting.mstFMSlider4;
 					break;
+				case "fm slider 5":
+					setting = ModSetting.mstFMSlider5;
+					break;
+				case "fm slider 6":
+					setting = ModSetting.mstFMSlider6;
+					break
 				case "fm feedback":
 					setting = ModSetting.mstFMFeedback;
 					break;
