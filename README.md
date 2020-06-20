@@ -1,5 +1,5 @@
-# JummBox
-SynthBox is an online work in progress tool for sketching and sharing instrumental melodies.
+# SynthBox
+[SynthBox](synthbox.co) is an online work in progress tool for sketching and sharing instrumental melodies.
 SynthBox is currently under development.
 It is a modification of [Jumbox](jummbus.bitbucket.io) which in turn is based on the [original BeepBox](https://beepbox.co), focused on having more power features.
 
